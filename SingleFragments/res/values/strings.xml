@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SingleFragments</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="landscape_message">这是横屏模式碎片</string>
+    <string name="portrait_message">这是竖屏模式碎片</string>
+
+</resources>
