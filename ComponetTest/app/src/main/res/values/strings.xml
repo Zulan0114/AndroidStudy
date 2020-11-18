@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ComponetTest</string>
+    <string name="button">Button</string>
+    <string name="edit_text_hint">Type something there</string>
+</resources>
