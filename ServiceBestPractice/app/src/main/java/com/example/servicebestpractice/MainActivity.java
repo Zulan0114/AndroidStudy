@@ -60,7 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         switch (v.getId()) {
             case R.id.start_download:
-                String url = "https://raw.githubusercontent.com/guolindev/eclipse/master/eclipse-inst-win64.exe";
+//                String url = "https://raw.githubusercontent.com/guolindev/eclipse/master/eclipse-inst-win64.exe";
+                String url = "https://github.com/greenrobot/EventBus/archive/master.zip";
                 downloadBinder.startDownload(url);
                 break;
             case R.id.pause_download:

@@ -61,7 +61,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
                 byte[] b = new byte[1024];
                 int total = 0;
                 int len;
-                while ((len = is.read(b)) != 1) {
+                while ((len = is.read(b)) != -1) {
                     if (isCanceled) {
                         return TYPE_CANCELED;
                     } else if (isPaused) {
