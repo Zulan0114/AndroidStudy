@@ -129,7 +129,7 @@ public class DownloadService extends Service {
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.notice))
                 .setContentIntent(pi)
                 .setContentTitle(title);
-        if (progress > 0) {
+        if (progress >= 0) {
             builder.setContentText(progress + "%");
             builder.setProgress(100, progress, false);
         }

@@ -43,14 +43,14 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
                 downloadedLength = file.length();
             }
             long contentLength = getContentLength(downloadUrl);
-            if (contentLength == 0) {
+            if (contentLength <= 0) {
                 return TYPE_FAILED;
             } else if (contentLength == downloadedLength) {
                 return TYPE_SUCCESS;
             }
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()
-                    .addHeader("RANGE", "bytes=" + downloadedLength + "_")
+                    .addHeader("RANGE", "bytes=" + downloadedLength + "-" + contentLength)
                     .url(downloadUrl)
                     .build();
             Response response = client.newCall(request).execute();
@@ -98,7 +98,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
 
     @Override
     protected void onProgressUpdate(Integer... values) {
-        int progress = 0;
+        int progress = values[0];
         if (progress > lastProgress) {
             listener.onProgress(progress);
             lastProgress = progress;
