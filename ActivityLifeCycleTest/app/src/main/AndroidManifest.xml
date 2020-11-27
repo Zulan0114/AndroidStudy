@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ActivityLifeCycleTest">
         <activity android:name=".DialogActivity" android:theme="@style/Theme.AppCompat.Dialog"/>
-        <activity android:name=".NormalActivity" />
+        <activity android:name=".NormalActivity" android:configChanges="screenSize|orientation"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
