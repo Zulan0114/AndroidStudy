@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-//        mWordViewModel = new ViewModelProvider(this).get(WordViewModel.class);
-        mWordViewModel = new WordViewModel(getApplication());
+        mWordViewModel = new ViewModelProvider(this, new ViewModelFactory(getApplication())).get(WordViewModel.class);
+//        mWordViewModel = new WordViewModel(getApplication());
         mWordViewModel.getAllWords().observe(this, words -> {
             // Update the cached copy of the words in the adapter.
             adapter.submitList(words);
