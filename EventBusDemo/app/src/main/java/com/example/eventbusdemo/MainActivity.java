@@ -46,6 +46,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnStartOtherActivity = findViewById(R.id.btnStartOtherActivity);
         btnStartOtherActivity.setOnClickListener(this);
+
+        enableComponents(false);
+    }
+
+    private void enableComponents(boolean enabled) {
+        btnPublish.setEnabled(enabled);
+        editTextPublish.setEnabled(enabled);
+        btnPostSticky.setEnabled(enabled);
+        editTextSticky.setEnabled(enabled);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        editTextPublish.setText("");
+        editTextSticky.setText("");
     }
 
     @Override
@@ -55,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 EventBus.getDefault().register(this);
                 Toast.makeText(this, "Registered...", Toast.LENGTH_SHORT).show();
                 btnRegister.setEnabled(false);
+                enableComponents(true);
                 break;
             case R.id.btnPublish:
                 String message = editTextPublish.getText().toString();
